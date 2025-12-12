@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Siakad - Hasil Studi & Akademik</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <div class="logo-icon">📊</div>
+            <div class="logo-text">
+              <h1>UNIVERSITAS CONTOH</h1>
+              <p>Hasil Studi & Akademik Mahasiswa</p>
+            </div>
+          </div>
+
+          <div class="header-actions">
+            <div class="user-info">
+              <div class="user-avatar">
+                <img src="https://ui-avatars.com/api/?name=Andi+Suryanto&background=E87918&color=fff" alt="Andi Suryanto" />
+              </div>
+              <div class="user-details">
+                <span class="user-name">Andi Suryanto</span>
+                <span class="user-nim">23012345</span>
+              </div>
+            </div>
+            <a href="../index.html" class="back-btn"> <i class="fas fa-arrow-left"></i> Kembali ke Dashboard </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <!-- Page Title -->
+        <div class="page-header">
+          <div class="page-title">
+            <h1><i class="fas fa-chart-line"></i> Hasil Studi & Akademik</h1>
+            <p class="subtitle">Semester 6 (Genap) - Tahun Akademik 2024/2025</p>
+          </div>
+          <div class="page-actions">
+            <div class="ipk-info">
+              <span class="label">IPK Kumulatif:</span>
+              <span class="value">3.68</span>
+              <span class="trend up"><i class="fas fa-arrow-up"></i> +0.08</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-value">3.75</div>
+              <div class="stat-label">IPS Semester Ini</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon success">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-value">144</div>
+              <div class="stat-label">Total SKS</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon warning">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-value">85%</div>
+              <div class="stat-label">Rata-rata Presensi</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-book"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-value">18/24</div>
+              <div class="stat-label">SKS Semester Ini</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="study-tabs">
+          <button class="study-tab active" data-tab="nilai">
+            <i class="fas fa-clipboard-check"></i>
+            <span>Nilai UTS & UAS</span>
+          </button>
+          <button class="study-tab" data-tab="khs">
+            <i class="fas fa-file-alt"></i>
+            <span>Kartu Hasil Studi (KHS)</span>
+          </button>
+          <button class="study-tab" data-tab="presensi">
+            <i class="fas fa-calendar-check"></i>
+            <span>Presensi</span>
+          </button>
+          <button class="study-tab" data-tab="transkrip">
+            <i class="fas fa-scroll"></i>
+            <span>Transkrip Nilai</span>
+          </button>
+          <button class="study-tab" data-tab="progress">
+            <i class="fas fa-chart-bar"></i>
+            <span>Progress Akademik</span>
+          </button>
+        </div>
+
+        <!-- Tab Contents -->
+        <div class="tab-contents">
+          <!-- Tab 1: Nilai UTS & UAS -->
+          <div class="tab-content active" id="nilai-content">
+            <div class="section-header">
+              <h2><i class="fas fa-clipboard-check"></i> Nilai UTS & UAS Semester 6</h2>
+              <div class="section-actions">
+                <div class="filter-group">
+                  <select class="filter-select" id="semester-filter">
+                    <option value="6">Semester 6 (2024/2025)</option>
+                    <option value="5">Semester 5 (2023/2024)</option>
+                    <option value="4">Semester 4 (2022/2023)</option>
+                    <option value="all">Semua Semester</option>
+                  </select>
+                  <select class="filter-select" id="type-filter">
+                    <option value="all">Semua Nilai</option>
+                    <option value="uts">UTS</option>
+                    <option value="uas">UAS</option>
+                    <option value="tugas">Tugas</option>
+                  </select>
+                </div>
+                <button class="export-btn" id="export-grades"><i class="fas fa-download"></i> Export PDF</button>
+              </div>
+            </div>
+
+            <!-- Semester Summary -->
+            <div class="semester-summary">
+              <div class="summary-card">
+                <h4><i class="fas fa-info-circle"></i> Ringkasan Semester 6</h4>
+                <div class="summary-grid">
+                  <div class="summary-item">
+                    <span class="summary-label">IPS:</span>
+                    <span class="summary-value success">3.75</span>
+                  </div>
+                  <div class="summary-item">
+                    <span class="summary-label">SKS Diambil:</span>
+                    <span class="summary-value">18</span>
+                  </div>
+                  <div class="summary-item">
+                    <span class="summary-label">SKS Lulus:</span>
+                    <span class="summary-value">18</span>
+                  </div>
+                  <div class="summary-item">
+                    <span class="summary-label">Nilai Terbaik:</span>
+                    <span class="summary-value">A (4.0)</span>
+                  </div>
+                  <div class="summary-item">
+                    <span class="summary-label">Prediksi IPK:</span>
+                    <span class="summary-value warning">3.72</span>
+                  </div>
+                  <div class="summary-item">
+                    <span class="summary-label">Status:</span>
+                    <span class="summary-value success">On Track</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grade-distribution">
+                <h4><i class="fas fa-chart-pie"></i> Distribusi Nilai</h4>
+                <div class="distribution-chart">
+                  <div class="grade-bar A" style="--percentage: 60%">
+                    <span class="bar-label">A: 60%</span>
+                  </div>
+                  <div class="grade-bar B" style="--percentage: 30%">
+                    <span class="bar-label">B: 30%</span>
+                  </div>
+                  <div class="grade-bar C" style="--percentage: 10%">
+                    <span class="bar-label">C: 10%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- UTS Scores -->
+            <div class="score-section">
+              <div class="section-title">
+                <h3><i class="fas fa-clipboard-list"></i> Nilai UTS</h3>
+                <span class="section-subtitle">Ujian Tengah Semester - Genap 2024/2025</span>
+              </div>
+
+              <div class="scores-table">
+                <table class="grades-table">
+                  <thead>
+                    <tr>
+                      <th>Kode</th>
+                      <th>Mata Kuliah</th>
+                      <th>SKS</th>
+                      <th>Nilai UTS</th>
+                      <th>Bobot</th>
+                      <th>Nilai Huruf</th>
+                      <th>Status</th>
+                      <th>Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>TI301</td>
+                      <td>Basis Data</td>
+                      <td>3</td>
+                      <td>
+                        <div class="score-value">
+                          <span class="score">85</span>
+                          <span class="score-max">/100</span>
+                        </div>
+                      </td>
+                      <td>30%</td>
+                      <td>
+                        <span class="grade-badge A">A</span>
+                        <span class="grade-point">(4.0)</span>
+                      </td>
+                      <td>
+                        <span class="status-badge success">Excellent</span>
+                      </td>
+                      <td>
+                        <button class="action-btn small" data-course="TI301"><i class="fas fa-chart-line"></i> Detail</button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>TI302</td>
+                      <td>Web Development</td>
+                      <td>3</td>
+                      <td>
+                        <div class="score-value">
+                          <span class="score">78</span>
+                          <span class="score-max">/100</span>
+                        </div>
+                      </td>
+                      <td>30%</td>
+                      <td>
+                        <span class="grade-badge B">B</span>
+                        <span class="grade-point">(3.0)</span>
+                      </td>
+                      <td>
+                        <span class="status-badge warning">Good</span>
+                      </td>
+                      <td>
+                        <button class="action-btn small" data-course="TI302"><i class="fas fa-chart-line"></i> Detail</button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>TI303</td>
+                      <td>UI/UX Design</td>
+                      <td>3</td>
+                      <td>
+                        <div class="score-value">
+                          <span class="score">92</span>
+                          <span class="score-max">/100</span>
+                        </div>
+                      </td>
+                      <td>30%</td>
+                      <td>
+                        <span class="grade-badge A">A</span>
+                        <span class="grade-point">(4.0)</span>
+                      </td>
+                      <td>
+                        <span class="status-badge success">Excellent</span>
+                      </td>
+                      <td>
+                        <button class="action-btn small" data-course="TI303"><i class="fas fa-chart-line"></i> Detail</button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>TI304</td>
+                      <td>Mobile Programming</td>
+                      <td>3</td>
+                      <td>
+                        <div class="score-value">
+                          <span class="score">65</span>
+                          <span class="score-max">/100</span>
+                        </div>
+                      </td>
+                      <td>30%</td>
+                      <td>
+                        <span class="grade-badge C">C</span>
+                        <span class="grade-point">(2.0)</span>
+                      </td>
+                      <td>
+                        <span class="status-badge danger">Need Improvement</span>
+                      </td>
+                      <td>
+                        <button class="action-btn small warning" data-course="TI304"><i class="fas fa-exclamation-triangle"></i> Review</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- UAS Scores -->
+            <div class="score-section">
+              <div class="section-title">
+                <h3><i class="fas fa-graduation-cap"></i> Nilai UAS</h3>
+                <span class="section-subtitle">Ujian Akhir Semester - Genap 2024/2025</span>
+              </div>
+
+              <div class="scores-table">
+                <table class="grades-table">
+                  <thead>
+                    <tr>
+                      <th>Kode</th>
+                      <th>Mata Kuliah</th>
+                      <th>SKS</th>
+                      <th>Nilai UAS</th>
+                      <th>Bobot</th>
+                      <th>Prediksi Akhir</th>
+                      <th>Status</th>
+                      <th>Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>TI301</td>
+                      <td>Basis Data</td>
+                      <td>3</td>
+                      <td>
+                        <div class="score-value">
+                          <span class="score">88</span>
+                          <span class="score-max">/100</span>
+                        </div>
+                      </td>
+                      <td>40%</td>
+                      <td>
+                        <span class="grade-badge A">A</span>
+                        <span class="grade-point">(4.0)</span>
+                      </td>
+                      <td>
+                        <span class="status-badge success">On Track</span>
+                      </td>
+                      <td>
+                        <button class="action-btn small" data-course="TI301"><i class="fas fa-chart-line"></i> Detail</button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>TI302</td>
+                      <td>Web Development</td>
+                      <td>3</td>
+                      <td>
+                        <div class="score-value">
+                          <span class="score">82</span>
+                          <span class="score-max">/100</span>
+                        </div>
+                      </td>
+                      <td>40%</td>
+                      <td>
+                        <span class="grade-badge B">B+</span>
+                        <span class="grade-point">(3.3)</span>
+                      </td>
+                      <td>
+                        <span class="status-badge warning">Need Review</span>
+                      </td>
+                      <td>
+                        <button class="action-btn small" data-course="TI302"><i class="fas fa-chart-line"></i> Detail</button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>TI303</td>
+                      <td>UI/UX Design</td>
+                      <td>3</td>
+                      <td>
+                        <div class="score-value">
+                          <span class="score">90</span>
+                          <span class="score-max">/100</span>
+                        </div>
+                      </td>
+                      <td>40%</td>
+                      <td>
+                        <span class="grade-badge A">A</span>
+                        <span class="grade-point">(4.0)</span>
+                      </td>
+                      <td>
+                        <span class="status-badge success">Excellent</span>
+                      </td>
+                      <td>
+                        <button class="action-btn small" data-course="TI303"><i class="fas fa-chart-line"></i> Detail</button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>TI304</td>
+                      <td>Mobile Programming</td>
+                      <td>3</td>
+                      <td>
+                        <div class="score-value">
+                          <span class="score">70</span>
+                          <span class="score-max">/100</span>
+                        </div>
+                      </td>
+                      <td>40%</td>
+                      <td>
+                        <span class="grade-badge C">C+</span>
+                        <span class="grade-point">(2.3)</span>
+                      </td>
+                      <td>
+                        <span class="status-badge danger">Critical</span>
+                      </td>
+                      <td>
+                        <button class="action-btn small danger" data-course="TI304"><i class="fas fa-exclamation-circle"></i> Konsultasi</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Score Details -->
+            <div class="score-details">
+              <div class="details-card">
+                <h4><i class="fas fa-calculator"></i> Kalkulator IPK</h4>
+                <div class="calculator">
+                  <div class="input-group">
+                    <label for="target-ipk">Target IPK:</label>
+                    <input type="number" id="target-ipk" min="0" max="4" step="0.01" value="3.80" />
+                  </div>
+                  <div class="input-group">
+                    <label for="current-ipk">IPK Saat Ini:</label>
+                    <input type="number" id="current-ipk" min="0" max="4" step="0.01" value="3.68" readonly />
+                  </div>
+                  <div class="result">
+                    <div class="result-label">IPK yang dibutuhkan:</div>
+                    <div class="result-value success">3.85</div>
+                  </div>
+                  <button class="calculate-btn"><i class="fas fa-calculator"></i> Hitung Kembali</button>
+                </div>
+              </div>
+
+              <div class="details-card">
+                <h4><i class="fas fa-lightbulb"></i> Rekomendasi</h4>
+                <ul class="recommendation-list">
+                  <li class="critical">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span>Fokus pada <strong>Mobile Programming</strong> untuk meningkatkan nilai dari C+ ke B</span>
+                  </li>
+                  <li class="warning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>Review <strong>Web Development</strong> untuk meningkatkan dari B+ ke A-</span>
+                  </li>
+                  <li class="success">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Pertahankan performa di <strong>Basis Data & UI/UX</strong></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: Kartu Hasil Studi (KHS) -->
+          <div class="tab-content" id="khs-content">
+            <div class="section-header">
+              <h2><i class="fas fa-file-alt"></i> Kartu Hasil Studi (KHS)</h2>
+              <div class="section-actions">
+                <div class="semester-selector">
+                  <select id="khs-semester">
+                    <option value="6" selected>Semester 6 (Genap 2024/2025)</option>
+                    <option value="5">Semester 5 (Ganjil 2023/2024)</option>
+                    <option value="4">Semester 4 (Genap 2022/2023)</option>
+                    <option value="3">Semester 3 (Ganjil 2022/2023)</option>
+                  </select>
+                </div>
+                <button class="export-btn" id="export-khs"><i class="fas fa-print"></i> Cetak KHS</button>
+                <button class="export-btn primary" id="download-khs"><i class="fas fa-download"></i> Download PDF</button>
+              </div>
+            </div>
+
+            <!-- KHS Document -->
+            <div class="khs-document">
+              <div class="document-header">
+                <div class="university-info">
+                  <h2>UNIVERSITAS CONTOH</h2>
+                  <h3>KARTU HASIL STUDI (KHS)</h3>
+                  <p>Semester Genap Tahun Akademik 2024/2025</p>
+                </div>
+                <div class="student-info">
+                  <div class="info-row">
+                    <span class="info-label">Nama</span>
+                    <span class="info-value">: Andi Suryanto</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="info-label">NIM</span>
+                    <span class="info-value">: 23012345</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="info-label">Program Studi</span>
+                    <span class="info-value">: Teknik Informatika (S1)</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="info-label">Semester</span>
+                    <span class="info-value">: 6 (Enam)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="document-body">
+                <table class="khs-table">
+                  <thead>
+                    <tr>
+                      <th rowspan="2">No</th>
+                      <th rowspan="2">Kode MK</th>
+                      <th rowspan="2">Mata Kuliah</th>
+                      <th rowspan="2">SKS</th>
+                      <th colspan="3">Nilai</th>
+                      <th rowspan="2">SKS x Nilai</th>
+                      <th rowspan="2">Huruf</th>
+                    </tr>
+                    <tr>
+                      <th>Tugas</th>
+                      <th>UTS</th>
+                      <th>UAS</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>TI301</td>
+                      <td>Basis Data</td>
+                      <td>3</td>
+                      <td>85</td>
+                      <td>85</td>
+                      <td>88</td>
+                      <td>12.0</td>
+                      <td><span class="grade-huruf A">A</span></td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>TI302</td>
+                      <td>Web Development</td>
+                      <td>3</td>
+                      <td>80</td>
+                      <td>78</td>
+                      <td>82</td>
+                      <td>9.0</td>
+                      <td><span class="grade-huruf B">B</span></td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>TI303</td>
+                      <td>UI/UX Design</td>
+                      <td>3</td>
+                      <td>90</td>
+                      <td>92</td>
+                      <td>90</td>
+                      <td>12.0</td>
+                      <td><span class="grade-huruf A">A</span></td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>TI304</td>
+                      <td>Mobile Programming</td>
+                      <td>3</td>
+                      <td>65</td>
+                      <td>65</td>
+                      <td>70</td>
+                      <td>6.0</td>
+                      <td><span class="grade-huruf C">C</span></td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>TI305</td>
+                      <td>Jaringan Komputer</td>
+                      <td>3</td>
+                      <td>82</td>
+                      <td>80</td>
+                      <td>85</td>
+                      <td>9.0</td>
+                      <td><span class="grade-huruf B">B</span></td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>TI306</td>
+                      <td>Kecerdasan Buatan</td>
+                      <td>3</td>
+                      <td>88</td>
+                      <td>85</td>
+                      <td>90</td>
+                      <td>12.0</td>
+                      <td><span class="grade-huruf A">A</span></td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr class="total-row">
+                      <td colspan="3" class="text-right"><strong>Total</strong></td>
+                      <td><strong>18</strong></td>
+                      <td colspan="3"></td>
+                      <td><strong>60.0</strong></td>
+                      <td></td>
+                    </tr>
+                    <tr class="summary-row">
+                      <td colspan="8" class="text-right"><strong>Indeks Prestasi Semester (IPS)</strong></td>
+                      <td><strong class="ips-value">3.33</strong></td>
+                    </tr>
+                  </tfoot>
+                </table>
+
+                <div class="khs-footer">
+                  <div class="signature-section">
+                    <div class="signature-box">
+                      <div class="signature-line"></div>
+                      <div class="signature-label">Dosen Wali</div>
+                      <div class="signature-name">Prof. Dr. Sari Dewi, M.Kom.</div>
+                      <div class="signature-nip">NIP. 197512312345678</div>
+                    </div>
+
+                    <div class="signature-box">
+                      <div class="signature-line"></div>
+                      <div class="signature-label">Ketua Program Studi</div>
+                      <div class="signature-name">Dr. Budi Santoso, M.T.</div>
+                      <div class="signature-nip">NIP. 197803212345678</div>
+                    </div>
+                  </div>
+
+                  <div class="footer-note">
+                    <p><strong>Keterangan:</strong></p>
+                    <p>Nilai A = 4.0, A- = 3.7, B+ = 3.3, B = 3.0, B- = 2.7, C+ = 2.3, C = 2.0, D = 1.0, E = 0.0</p>
+                    <p>IPS = Total (SKS x Nilai) / Total SKS</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- KHS Summary -->
+            <div class="khs-summary">
+              <div class="summary-card">
+                <h4><i class="fas fa-chart-bar"></i> Statistik KHS</h4>
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <div class="stat-value">3.33</div>
+                    <div class="stat-label">IPS Semester</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value">18</div>
+                    <div class="stat-label">Total SKS</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">Mata Kuliah A</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value">2</div>
+                    <div class="stat-label">Mata Kuliah B</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value">1</div>
+                    <div class="stat-label">Mata Kuliah C</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Mengulang</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="summary-card">
+                <h4><i class="fas fa-bullseye"></i> Pencapaian</h4>
+                <div class="achievement-list">
+                  <div class="achievement-item success">
+                    <i class="fas fa-trophy"></i>
+                    <div>
+                      <div class="achievement-title">Best Performance</div>
+                      <div class="achievement-desc">UI/UX Design (92)</div>
+                    </div>
+                  </div>
+                  <div class="achievement-item warning">
+                    <i class="fas fa-chart-line"></i>
+                    <div>
+                      <div class="achievement-title">Most Improved</div>
+                      <div class="achievement-desc">Web Development (+4)</div>
+                    </div>
+                  </div>
+                  <div class="achievement-item danger">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div>
+                      <div class="achievement-title">Need Attention</div>
+                      <div class="achievement-desc">Mobile Programming (65)</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 3: Presensi -->
+          <div class="tab-content" id="presensi-content">
+            <div class="section-header">
+              <h2><i class="fas fa-calendar-check"></i> Presensi Kehadiran</h2>
+              <div class="section-actions">
+                <div class="filter-group">
+                  <select class="filter-select" id="presensi-month">
+                    <option value="1" selected>Januari 2025</option>
+                    <option value="2">Februari 2025</option>
+                    <option value="3">Maret 2025</option>
+                    <option value="4">April 2025</option>
+                  </select>
+                  <select class="filter-select" id="presensi-course">
+                    <option value="all">Semua Mata Kuliah</option>
+                    <option value="TI301">Basis Data</option>
+                    <option value="TI302">Web Development</option>
+                    <option value="TI303">UI/UX Design</option>
+                    <option value="TI304">Mobile Programming</option>
+                  </select>
+                </div>
+                <button class="export-btn" id="export-presensi"><i class="fas fa-download"></i> Export Data</button>
+              </div>
+            </div>
+
+            <!-- Attendance Overview -->
+            <div class="attendance-overview">
+              <div class="overview-card">
+                <div class="overview-header">
+                  <h4><i class="fas fa-chart-pie"></i> Ringkasan Kehadiran</h4>
+                  <div class="overview-period">Januari 2025</div>
+                </div>
+                <div class="overview-stats">
+                  <div class="stat-circle">
+                    <div class="circle-chart" style="--percentage: 85%">
+                      <span class="circle-value">85%</span>
+                    </div>
+                    <div class="circle-label">Rata-rata</div>
+                  </div>
+                  <div class="stat-details">
+                    <div class="detail-item">
+                      <span class="detail-label">Hadir</span>
+                      <span class="detail-value success">34/40</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="detail-label">Izin</span>
+                      <span class="detail-value warning">4/40</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="detail-label">Sakit</span>
+                      <span class="detail-value info">2/40</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="detail-label">Alpha</span>
+                      <span class="detail-value danger">0/40</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="overview-card">
+                <div class="overview-header">
+                  <h4><i class="fas fa-exclamation-triangle"></i> Peringatan</h4>
+                  <div class="overview-subtitle">Batas minimal kehadiran: 75%</div>
+                </div>
+                <div class="warning-list">
+                  <div class="warning-item">
+                    <i class="fas fa-exclamation-circle warning"></i>
+                    <div class="warning-content">
+                      <div class="warning-title">Mobile Programming</div>
+                      <div class="warning-desc">Kehadiran: 70% (mendekati batas)</div>
+                    </div>
+                  </div>
+                  <div class="warning-item">
+                    <i class="fas fa-check-circle success"></i>
+                    <div class="warning-content">
+                      <div class="warning-title">UI/UX Design</div>
+                      <div class="warning-desc">Kehadiran: 95% (excellent)</div>
+                    </div>
+                  </div>
+                  <div class="warning-item">
+                    <i class="fas fa-info-circle info"></i>
+                    <div class="warning-content">
+                      <div class="warning-title">Basis Data</div>
+                      <div class="warning-desc">4 pertemuan tersisa</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Attendance Calendar -->
+            <div class="attendance-calendar">
+              <h3><i class="fas fa-calendar-alt"></i> Kalender Kehadiran - Januari 2025</h3>
+              <div class="calendar-header">
+                <div class="day-header">Minggu</div>
+                <div class="day-header">Senin</div>
+                <div class="day-header">Selasa</div>
+                <div class="day-header">Rabu</div>
+                <div class="day-header">Kamis</div>
+                <div class="day-header">Jumat</div>
+                <div class="day-header">Sabtu</div>
+              </div>
+              <div class="calendar-body">
+                <!-- Week 1 -->
+                <div class="day empty"></div>
+                <div class="day empty"></div>
+                <div class="day empty"></div>
+                <div class="day">
+                  <div class="day-number">1</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">2</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">3</div>
+                  <div class="day-status holiday">Libur</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">4</div>
+                  <div class="day-status holiday">Libur</div>
+                </div>
+
+                <!-- Week 2 (Jan 6-12) -->
+                <div class="day">
+                  <div class="day-number">5</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">6</div>
+                  <div class="day-status present">H</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">7</div>
+                  <div class="day-status present">H</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">8</div>
+                  <div class="day-status present">H</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">9</div>
+                  <div class="day-status absent">I</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">10</div>
+                  <div class="day-status present">H</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">11</div>
+                </div>
+
+                <!-- Week 3 (Jan 13-19) - Current Week -->
+                <div class="day">
+                  <div class="day-number">12</div>
+                </div>
+                <div class="day current">
+                  <div class="day-number">13</div>
+                  <div class="day-status present">H</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">14</div>
+                  <div class="day-status sick">S</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">15</div>
+                  <div class="day-status present">H</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">16</div>
+                  <div class="day-status present">H</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">17</div>
+                  <div class="day-status present">H</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">18</div>
+                </div>
+
+                <!-- Week 4 (Jan 20-26) -->
+                <div class="day">
+                  <div class="day-number">19</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">20</div>
+                  <div class="day-status present">H</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">21</div>
+                  <div class="day-status present">H</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">22</div>
+                  <div class="day-status future">-</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">23</div>
+                  <div class="day-status future">-</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">24</div>
+                  <div class="day-status future">-</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">25</div>
+                </div>
+
+                <!-- Week 5 -->
+                <div class="day">
+                  <div class="day-number">26</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">27</div>
+                  <div class="day-status future">-</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">28</div>
+                  <div class="day-status future">-</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">29</div>
+                  <div class="day-status future">-</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">30</div>
+                  <div class="day-status future">-</div>
+                </div>
+                <div class="day">
+                  <div class="day-number">31</div>
+                  <div class="day-status future">-</div>
+                </div>
+                <div class="day empty"></div>
+              </div>
+
+              <div class="calendar-legend">
+                <div class="legend-item">
+                  <span class="legend-dot present"></span>
+                  <span>Hadir (H)</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-dot absent"></span>
+                  <span>Izin (I)</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-dot sick"></span>
+                  <span>Sakit (S)</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-dot future"></span>
+                  <span>Belum Dilaksanakan</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-dot holiday"></span>
+                  <span>Libur</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course Attendance Details -->
+            <div class="course-attendance">
+              <h3><i class="fas fa-list-alt"></i> Detail Kehadiran per Mata Kuliah</h3>
+              <div class="attendance-cards">
+                <div class="attendance-card">
+                  <div class="card-header">
+                    <h4>Basis Data</h4>
+                    <span class="attendance-rate success">90%</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="attendance-stats">
+                      <div class="stat">
+                        <span class="stat-label">Hadir</span>
+                        <span class="stat-value">9/10</span>
+                      </div>
+                      <div class="stat">
+                        <span class="stat-label">Izin</span>
+                        <span class="stat-value">1/10</span>
+                      </div>
+                      <div class="stat">
+                        <span class="stat-label">Sakit</span>
+                        <span class="stat-value">0/10</span>
+                      </div>
+                      <div class="stat">
+                        <span class="stat-label">Alpha</span>
+                        <span class="stat-value">0/10</span>
+                      </div>
+                    </div>
+                    <div class="attendance-progress">
+                      <div class="progress-bar">
+                        <div class="progress-fill" style="width: 90%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="attendance-card">
+                  <div class="card-header">
+                    <h4>Web Development</h4>
+                    <span class="attendance-rate success">85%</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="attendance-stats">
+                      <div class="stat">
+                        <span class="stat-label">Hadir</span>
+                        <span class="stat-value">8/10</span>
+                      </div>
+                      <div class="stat">
+                        <span class="stat-label">Izin</span>
+                        <span class="stat-value">1/10</span>
+                      </div>
+                      <div class="stat">
+                        <span class="stat-label">Sakit</span>
+                        <span class="stat-value">1/10</span>
+                      </div>
+                      <div class="stat">
+                        <span class="stat-label">Alpha</span>
+                        <span class="stat-value">0/10</span>
+                      </div>
+                    </div>
+                    <div class="attendance-progress">
+                      <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="attendance-card">
+                  <div class="card-header">
+                    <h4>UI/UX Design</h4>
+                    <span class="attendance-rate success">95%</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="attendance-stats">
+                      <div class="stat">
+                        <span class="stat-label">Hadir</span>
+                        <span class="stat-value">9/10</span>
+                      </div>
+                      <div class="stat">
+                        <span class="stat-label">Izin</span>
+                        <span class="stat-value">0/10</span>
+                      </div>
+                      <div class="stat">
+                        <span class="stat-label">Sakit</span>
+                        <span class="stat-value">1/10</span>
+                      </div>
+                      <div class="stat">
+                        <span class="stat-label">Alpha</span>
+                        <span class="stat-value">0/10</span>
+                      </div>
+                    </div>
+                    <div class="attendance-progress">
+                      <div class="progress-bar">
+                        <div class="progress-fill" style="width: 95%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="attendance-card warning">
+                  <div class="card-header">
+                    <h4>Mobile Programming</h4>
+                    <span class="attendance-rate warning">70%</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="attendance-stats">
+                      <div class="stat">
+                        <span class="stat-label">Hadir</span>
+                        <span class="stat-value">7/10</span>
+                      </div>
+                      <div class="stat">
+                        <span class="stat-label">Izin</span>
+                        <span class="stat-value">2/10</span>
+                      </div>
+                      <div class="stat">
+                        <span class="stat-label">Sakit</span>
+                        <span class="stat-value">0/10</span>
+                      </div>
+                      <div class="stat">
+                        <span class="stat-label">Alpha</span>
+                        <span class="stat-value">1/10</span>
+                      </div>
+                    </div>
+                    <div class="attendance-progress">
+                      <div class="progress-bar">
+                        <div class="progress-fill" style="width: 70%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 4: Transkrip Nilai -->
+          <div class="tab-content" id="transkrip-content">
+            <div class="section-header">
+              <h2><i class="fas fa-scroll"></i> Transkrip Nilai Akademik</h2>
+              <div class="section-actions">
+                <button class="export-btn" id="print-transcript"><i class="fas fa-print"></i> Cetak Transkrip</button>
+                <button class="export-btn primary" id="download-transcript"><i class="fas fa-download"></i> Download PDF</button>
+                <button class="export-btn success" id="verify-transcript"><i class="fas fa-check-circle"></i> Verifikasi Legal</button>
+              </div>
+            </div>
+
+            <!-- Transcript Document -->
+            <div class="transcript-document">
+              <div class="document-header">
+                <div class="university-info">
+                  <h2>UNIVERSITAS CONTOH</h2>
+                  <h3>TRANSKRIP NILAI AKADEMIK</h3>
+                  <p>Program Sarjana (S1) - Teknik Informatika</p>
+                </div>
+                <div class="document-meta">
+                  <div class="meta-item">
+                    <span class="meta-label">Tanggal Cetak</span>
+                    <span class="meta-value">15 Januari 2025</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">Nomor Transkrip</span>
+                    <span class="meta-value">TRX-2025-001234</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">Status</span>
+                    <span class="meta-value success">TERVERIFIKASI</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="student-info-section">
+                <div class="info-grid">
+                  <div class="info-item">
+                    <span class="info-label">Nama Lengkap</span>
+                    <span class="info-value">: Andi Suryanto</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Nomor Induk Mahasiswa</span>
+                    <span class="info-value">: 23012345</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Tempat, Tanggal Lahir</span>
+                    <span class="info-value">: Jakarta, 15 Mei 2003</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Program Studi</span>
+                    <span class="info-value">: Teknik Informatika</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Jenjang Pendidikan</span>
+                    <span class="info-value">: Sarjana (S1)</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Tanggal Masuk</span>
+                    <span class="info-value">: 1 September 2022</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Prediksi Lulus</span>
+                    <span class="info-value">: Juni 2026</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Status Akademik</span>
+                    <span class="info-value success">: Aktif</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Academic Summary -->
+              <div class="academic-summary">
+                <div class="summary-box">
+                  <h4><i class="fas fa-chart-line"></i> Ringkasan Akademik</h4>
+                  <div class="summary-grid">
+                    <div class="summary-item">
+                      <span class="summary-label">Indeks Prestasi Kumulatif (IPK)</span>
+                      <span class="summary-value success">3.68</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-label">Total SKS Tempuh</span>
+                      <span class="summary-value">144</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-label">Total SKS Lulus</span>
+                      <span class="summary-value">144</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-label">Sisa SKS</span>
+                      <span class="summary-value">0</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Transcript Table -->
+              <div class="transcript-table-container">
+                <table class="transcript-table">
+                  <thead>
+                    <tr>
+                      <th rowspan="2">Semester</th>
+                      <th rowspan="2">Kode MK</th>
+                      <th rowspan="2">Mata Kuliah</th>
+                      <th rowspan="2">SKS</th>
+                      <th rowspan="2">Nilai Huruf</th>
+                      <th rowspan="2">Nilai Angka</th>
+                      <th rowspan="2">SKS x Nilai</th>
+                      <th colspan="2">Indeks</th>
+                    </tr>
+                    <tr>
+                      <th>IPS</th>
+                      <th>IPK</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Semester 1 -->
+                    <tr class="semester-header">
+                      <td colspan="9">
+                        <strong>Semester 1 (Ganjil 2022/2023)</strong>
+                        <span class="semester-ips">IPS: 3.50</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>TI101</td>
+                      <td>Pengantar TI</td>
+                      <td>3</td>
+                      <td><span class="grade-huruf A">A</span></td>
+                      <td>85</td>
+                      <td>12.0</td>
+                      <td rowspan="5" class="semester-ips">3.50</td>
+                      <td rowspan="5" class="semester-ipk">3.50</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>TI102</td>
+                      <td>Algoritma Pemrograman</td>
+                      <td>3</td>
+                      <td><span class="grade-huruf B">B+</span></td>
+                      <td>80</td>
+                      <td>9.9</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>TI103</td>
+                      <td>Matematika Diskrit</td>
+                      <td>3</td>
+                      <td><span class="grade-huruf A">A</span></td>
+                      <td>88</td>
+                      <td>12.0</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>TI104</td>
+                      <td>Bahasa Inggris</td>
+                      <td>2</td>
+                      <td><span class="grade-huruf B">B</span></td>
+                      <td>78</td>
+                      <td>6.0</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>TI105</td>
+                      <td>Kalkulus</td>
+                      <td>4</td>
+                      <td><span class="grade-huruf B">B</span></td>
+                      <td>77</td>
+                      <td>12.0</td>
+                    </tr>
+
+                    <!-- Semester 2 -->
+                    <tr class="semester-header">
+                      <td colspan="9">
+                        <strong>Semester 2 (Genap 2022/2023)</strong>
+                        <span class="semester-ips">IPS: 3.45</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>TI201</td>
+                      <td>Struktur Data</td>
+                      <td>3</td>
+                      <td><span class="grade-huruf A">A-</span></td>
+                      <td>83</td>
+                      <td>11.1</td>
+                      <td rowspan="5" class="semester-ips">3.45</td>
+                      <td rowspan="5" class="semester-ipk">3.48</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>TI202</td>
+                      <td>Basis Data</td>
+                      <td>3</td>
+                      <td><span class="grade-huruf B">B+</span></td>
+                      <td>81</td>
+                      <td>9.9</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>TI203</td>
+                      <td>Jaringan Komputer</td>
+                      <td>3</td>
+                      <td><span class="grade-huruf B">B</span></td>
+                      <td>79</td>
+                      <td>9.0</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>TI204</td>
+                      <td>Pemrograman Web</td>
+                      <td>3</td>
+                      <td><span class="grade-huruf A">A</span></td>
+                      <td>87</td>
+                      <td>12.0</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>TI205</td>
+                      <td>Statistika</td>
+                      <td>3</td>
+                      <td><span class="grade-huruf B">B</span></td>
+                      <td>76</td>
+                      <td>9.0</td>
+                    </tr>
+
+                    <!-- Add more semesters similarly -->
+
+                    <!-- Semester 6 (Current) -->
+                    <tr class="semester-header current">
+                      <td colspan="9">
+                        <strong>Semester 6 (Genap 2024/2025) - Sedang Berjalan</strong>
+                        <span class="semester-ips">Prediksi IPS: 3.75</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>TI301</td>
+                      <td>Basis Data Lanjut</td>
+                      <td>3</td>
+                      <td><span class="grade-huruf A">A</span></td>
+                      <td>88</td>
+                      <td>12.0</td>
+                      <td rowspan="4" class="semester-ips">3.75</td>
+                      <td rowspan="4" class="semester-ipk">3.68</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>TI302</td>
+                      <td>Web Development</td>
+                      <td>3</td>
+                      <td><span class="grade-huruf B">B+</span></td>
+                      <td>82</td>
+                      <td>9.9</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>TI303</td>
+                      <td>UI/UX Design</td>
+                      <td>3</td>
+                      <td><span class="grade-huruf A">A</span></td>
+                      <td>92</td>
+                      <td>12.0</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>TI304</td>
+                      <td>Mobile Programming</td>
+                      <td>3</td>
+                      <td><span class="grade-huruf C">C+</span></td>
+                      <td>70</td>
+                      <td>6.9</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr class="total-row">
+                      <td colspan="3" class="text-right"><strong>TOTAL</strong></td>
+                      <td><strong>144</strong></td>
+                      <td colspan="2"></td>
+                      <td><strong>529.8</strong></td>
+                      <td></td>
+                      <td><strong class="ipk-total">3.68</strong></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+
+              <div class="transcript-footer">
+                <div class="footer-note">
+                  <p><strong>Keterangan:</strong></p>
+                  <p>IPK = Total (SKS x Nilai) / Total SKS | A=4.0, A-=3.7, B+=3.3, B=3.0, B-=2.7, C+=2.3, C=2.0, D=1.0, E=0.0</p>
+                  <p>Transkrip ini sah setelah ditandatangani dan distempel oleh universitas.</p>
+                </div>
+
+                <div class="signature-section">
+                  <div class="signature-box">
+                    <div class="signature-line"></div>
+                    <div class="signature-label">Ketua Program Studi</div>
+                    <div class="signature-name">Dr. Budi Santoso, M.T.</div>
+                    <div class="signature-nip">NIP. 197803212345678</div>
+                  </div>
+
+                  <div class="signature-box">
+                    <div class="signature-line"></div>
+                    <div class="signature-label">Wakil Rektor Akademik</div>
+                    <div class="signature-name">Prof. Dr. Ani Wijaya, M.Sc.</div>
+                    <div class="signature-nip">NIP. 197012312345678</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Transcript Actions -->
+            <div class="transcript-actions">
+              <div class="action-card">
+                <h4><i class="fas fa-file-contract"></i> Surat Keterangan</h4>
+                <p>Generate surat keterangan nilai untuk kebutuhan beasiswa atau lamaran kerja.</p>
+                <button class="action-btn"><i class="fas fa-file-download"></i> Buat Surat</button>
+              </div>
+
+              <div class="action-card">
+                <h4><i class="fas fa-chart-line"></i> Analisis Performa</h4>
+                <p>Lihat analisis detail perkembangan akademik dari semester ke semester.</p>
+                <button class="action-btn"><i class="fas fa-chart-bar"></i> Lihat Analisis</button>
+              </div>
+
+              <div class="action-card">
+                <h4><i class="fas fa-shield-alt"></i> Verifikasi Digital</h4>
+                <p>Verifikasi keaslian transkrip dengan kode QR dan digital signature.</p>
+                <button class="action-btn"><i class="fas fa-qrcode"></i> Verifikasi</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 5: Progress Akademik -->
+          <div class="tab-content" id="progress-content">
+            <div class="section-header">
+              <h2><i class="fas fa-chart-bar"></i> Progress Akademik</h2>
+              <div class="section-actions">
+                <div class="view-toggle">
+                  <button class="view-btn active" data-view="overview"><i class="fas fa-chart-pie"></i> Overview</button>
+                  <button class="view-btn" data-view="semester"><i class="fas fa-calendar"></i> Per Semester</button>
+                  <button class="view-btn" data-view="subject"><i class="fas fa-book"></i> Per Mata Kuliah</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Overview View -->
+            <div class="progress-view active" id="overview-view">
+              <div class="progress-overview">
+                <div class="overview-card">
+                  <h4><i class="fas fa-road"></i> Roadmap Akademik</h4>
+                  <div class="roadmap">
+                    <div class="roadmap-item completed">
+                      <div class="roadmap-icon">
+                        <i class="fas fa-check-circle"></i>
+                      </div>
+                      <div class="roadmap-content">
+                        <div class="roadmap-title">Semester 1-3</div>
+                        <div class="roadmap-desc">Mata kuliah dasar selesai</div>
+                      </div>
+                    </div>
+                    <div class="roadmap-item completed">
+                      <div class="roadmap-icon">
+                        <i class="fas fa-check-circle"></i>
+                      </div>
+                      <div class="roadmap-content">
+                        <div class="roadmap-title">Semester 4-5</div>
+                        <div class="roadmap-desc">Mata kuliah inti selesai</div>
+                      </div>
+                    </div>
+                    <div class="roadmap-item current">
+                      <div class="roadmap-icon">
+                        <i class="fas fa-spinner"></i>
+                      </div>
+                      <div class="roadmap-content">
+                        <div class="roadmap-title">Semester 6</div>
+                        <div class="roadmap-desc">Sedang berjalan (75%)</div>
+                        <div class="roadmap-progress">
+                          <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="roadmap-item upcoming">
+                      <div class="roadmap-icon">
+                        <i class="fas fa-flag"></i>
+                      </div>
+                      <div class="roadmap-content">
+                        <div class="roadmap-title">Semester 7-8</div>
+                        <div class="roadmap-desc">Skripsi & mata kuliah pilihan</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="overview-card">
+                  <h4><i class="fas fa-bullseye"></i> Target Kelulusan</h4>
+                  <div class="target-info">
+                    <div class="target-item">
+                      <span class="target-label">Target IPK:</span>
+                      <span class="target-value">3.80</span>
+                    </div>
+                    <div class="target-item">
+                      <span class="target-label">IPK Saat Ini:</span>
+                      <span class="target-value">3.68</span>
+                    </div>
+                    <div class="target-item">
+                      <span class="target-label">Kebutuhan:</span>
+                      <span class="target-value warning">+0.12</span>
+                    </div>
+                  </div>
+
+                  <div class="target-progress">
+                    <div class="progress-header">
+                      <span>Progress menuju target</span>
+                      <span>92%</span>
+                    </div>
+                    <div class="progress-bar large">
+                      <div class="progress-fill success" style="width: 92%"></div>
+                    </div>
+                  </div>
+
+                  <div class="time-remaining">
+                    <i class="fas fa-hourglass-half"></i>
+                    <span>Estimasi waktu kelulusan: <strong>4 semester lagi</strong></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Performance Chart -->
+              <div class="performance-chart">
+                <h4><i class="fas fa-chart-line"></i> Perkembangan IPK per Semester</h4>
+                <div class="chart-container">
+                  <div class="chart-grid">
+                    <div class="chart-y-axis">
+                      <div class="y-label">4.0</div>
+                      <div class="y-label">3.5</div>
+                      <div class="y-label">3.0</div>
+                      <div class="y-label">2.5</div>
+                      <div class="y-label">2.0</div>
+                    </div>
+                    <div class="chart-body">
+                      <div class="chart-bars">
+                        <div class="chart-bar" style="height: 87.5%" data-semester="1" data-ips="3.50">
+                          <div class="bar-tooltip">Semester 1: 3.50</div>
+                        </div>
+                        <div class="chart-bar" style="height: 86.25%" data-semester="2" data-ips="3.45">
+                          <div class="bar-tooltip">Semester 2: 3.45</div>
+                        </div>
+                        <div class="chart-bar" style="height: 90%" data-semester="3" data-ips="3.60">
+                          <div class="bar-tooltip">Semester 3: 3.60</div>
+                        </div>
+                        <div class="chart-bar" style="height: 87.5%" data-semester="4" data-ips="3.50">
+                          <div class="bar-tooltip">Semester 4: 3.50</div>
+                        </div>
+                        <div class="chart-bar" style="height: 92.5%" data-semester="5" data-ips="3.70">
+                          <div class="bar-tooltip">Semester 5: 3.70</div>
+                        </div>
+                        <div class="chart-bar current" style="height: 93.75%" data-semester="6" data-ips="3.75">
+                          <div class="bar-tooltip">Semester 6: 3.75 (prediksi)</div>
+                        </div>
+                      </div>
+                      <div class="chart-x-axis">
+                        <div class="x-label">Sem 1</div>
+                        <div class="x-label">Sem 2</div>
+                        <div class="x-label">Sem 3</div>
+                        <div class="x-label">Sem 4</div>
+                        <div class="x-label">Sem 5</div>
+                        <div class="x-label">Sem 6</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="chart-legend">
+                    <div class="legend-item">
+                      <span class="legend-dot completed"></span>
+                      <span>Selesai</span>
+                    </div>
+                    <div class="legend-item">
+                      <span class="legend-dot current"></span>
+                      <span>Sedang Berjalan</span>
+                    </div>
+                    <div class="legend-item">
+                      <span class="legend-dot target"></span>
+                      <span>Target (3.80)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Recommendations -->
+              <div class="recommendations-section">
+                <h4><i class="fas fa-lightbulb"></i> Rekomendasi untuk Meningkatkan IPK</h4>
+                <div class="recommendation-cards">
+                  <div class="recommendation-card">
+                    <div class="card-icon warning">
+                      <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="card-content">
+                      <h5>Fokus pada Mata Kuliah Kritis</h5>
+                      <p>Mobile Programming (C+) perlu ditingkatkan ke B untuk kontribusi signifikan pada IPK.</p>
+                    </div>
+                  </div>
+
+                  <div class="recommendation-card">
+                    <div class="card-icon info">
+                      <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="card-content">
+                      <h5>Manajemen Waktu</h5>
+                      <p>Alokasikan 2 jam ekstra per minggu untuk review materi yang kurang dipahami.</p>
+                    </div>
+                  </div>
+
+                  <div class="recommendation-card">
+                    <div class="card-icon success">
+                      <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="card-content">
+                      <h5>Konsultasi dengan Dosen</h5>
+                      <p>Jadwalkan konsultasi mingguan dengan dosen pengampu untuk bimbingan khusus.</p>
+                    </div>
+                  </div>
+
+                  <div class="recommendation-card">
+                    <div class="card-icon">
+                      <i class="fas fa-users"></i>
+                    </div>
+                    <div class="card-content">
+                      <h5>Study Group</h5>
+                      <p>Bergabung dengan kelompok belajar untuk mata kuliah yang memiliki tingkat kesulitan tinggi.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Universitas Contoh - Sistem Hasil Studi & Akademik. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#"><i class="fas fa-question-circle"></i> Bantuan Akademik</a>
+          <a href="#"><i class="fas fa-shield-alt"></i> Privasi Nilai</a>
+          <a href="mailto:akademik@universitascontoh.ac.id"> <i class="fas fa-envelope"></i> Kontak Akademik </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal for Grade Details -->
+    <div class="modal" id="grade-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3><i class="fas fa-chart-line"></i> Detail Nilai Mata Kuliah</h3>
+          <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body" id="grade-content">
+          <!-- Content akan diisi oleh JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

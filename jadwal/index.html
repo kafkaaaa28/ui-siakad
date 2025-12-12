@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Siakad - Jadwal Akademik</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <div class="logo-icon">🎓</div>
+            <div class="logo-text">
+              <h1>UNIVERSITAS CONTOH</h1>
+              <p>Sistem Informasi Akademik - Jadwal</p>
+            </div>
+          </div>
+
+          <div class="header-actions">
+            <div class="user-info">
+              <div class="user-avatar">
+                <img src="https://ui-avatars.com/api/?name=Andi+Suryanto&background=E87918&color=fff" alt="Andi Suryanto" />
+              </div>
+              <div class="user-details">
+                <span class="user-name">Andi Suryanto</span>
+                <span class="user-nim">23012345</span>
+              </div>
+            </div>
+            <a href="../index.html" class="back-btn"> <i class="fas fa-arrow-left"></i> Kembali ke Dashboard </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <!-- Page Title -->
+        <div class="page-header">
+          <div class="page-title">
+            <h1><i class="fas fa-calendar-alt"></i> Jadwal Akademik</h1>
+            <p class="subtitle">Semester 6 (Genap) - Tahun Akademik 2024/2025</p>
+          </div>
+          <div class="page-actions">
+            <div class="semester-selector">
+              <i class="fas fa-filter"></i>
+              <select id="semester-select">
+                <option>Semester 6 (Genap 2024/2025)</option>
+                <option>Semester 5 (Ganjil 2023/2024)</option>
+                <option>Semester 4 (Genap 2022/2023)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Schedule Tabs -->
+        <div class="tabs-container">
+          <div class="tabs">
+            <button class="tab active" data-tab="kuliah">
+              <i class="fas fa-calendar-alt"></i>
+              <span>Jadwal Kuliah</span>
+              <span class="tab-badge">6</span>
+            </button>
+            <button class="tab" data-tab="uts">
+              <i class="fas fa-clipboard-check"></i>
+              <span>Jadwal UTS</span>
+              <span class="tab-badge warning">3</span>
+            </button>
+            <button class="tab" data-tab="uas">
+              <i class="fas fa-graduation-cap"></i>
+              <span>Jadwal UAS</span>
+              <span class="tab-badge danger">4</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+          <div class="view-controls">
+            <div class="view-toggle">
+              <button class="view-btn active" data-view="week"><i class="fas fa-calendar-week"></i> Mingguan</button>
+              <button class="view-btn" data-view="month"><i class="fas fa-calendar"></i> Bulanan</button>
+              <button class="view-btn" data-view="list"><i class="fas fa-list"></i> List</button>
+            </div>
+
+            <div class="week-navigation">
+              <button class="nav-btn" id="prev-week">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <div class="current-week" id="current-week">Minggu 12, 15-21 Jan 2025</div>
+              <button class="nav-btn" id="next-week">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+              <button class="today-btn" id="today-btn">Hari Ini</button>
+            </div>
+          </div>
+
+          <div class="action-controls">
+            <button class="action-btn" id="print-btn"><i class="fas fa-print"></i> Print</button>
+            <button class="action-btn primary" id="export-btn"><i class="fas fa-download"></i> Export</button>
+          </div>
+        </div>
+
+        <!-- Tab Contents -->
+        <div class="tab-contents">
+          <!-- Tab 1: Jadwal Kuliah -->
+          <div class="tab-content active" id="kuliah-content">
+            <!-- Weekly View -->
+            <div class="view-content active" id="week-view">
+              <div class="calendar">
+                <div class="calendar-header">
+                  <div class="time-col">WAKTU</div>
+                  <div class="day">SENIN</div>
+                  <div class="day">SELASA</div>
+                  <div class="day">RABU</div>
+                  <div class="day">KAMIS</div>
+                  <div class="day">JUMAT</div>
+                  <div class="day">SABTU</div>
+                </div>
+
+                <div class="calendar-body">
+                  <!-- Time Slots 07:00-17:00 -->
+                  <div class="time-slot">07:00</div>
+                  <div class="time-cell"></div>
+                  <div class="time-cell"></div>
+                  <div class="time-cell"></div>
+                  <div class="time-cell"></div>
+                  <div class="time-cell"></div>
+                  <div class="time-cell"></div>
+
+                  <div class="time-slot">08:00</div>
+                  <div class="time-cell">
+                    <div class="event-card basis-data">
+                      <div class="event-time">08:00-09:40</div>
+                      <div class="event-title">Basis Data</div>
+                      <div class="event-location"><i class="fas fa-map-marker-alt"></i> Ruang 301</div>
+                    </div>
+                  </div>
+                  <div class="time-cell"></div>
+                  <div class="time-cell">
+                    <div class="event-card basis-data">
+                      <div class="event-time">08:00-09:40</div>
+                      <div class="event-title">Basis Data</div>
+                      <div class="event-location"><i class="fas fa-map-marker-alt"></i> Ruang 301</div>
+                    </div>
+                  </div>
+                  <div class="time-cell"></div>
+                  <div class="time-cell"></div>
+                  <div class="time-cell"></div>
+
+                  <!-- Continue with other time slots... -->
+                  <div class="time-slot">10:00</div>
+                  <div class="time-cell"></div>
+                  <div class="time-cell">
+                    <div class="event-card web-dev">
+                      <div class="event-time">10:00-11:40</div>
+                      <div class="event-title">Web Development</div>
+                      <div class="event-location"><i class="fas fa-laptop-code"></i> Lab. Komputer 1</div>
+                    </div>
+                  </div>
+                  <div class="time-cell">
+                    <div class="event-card ui-ux">
+                      <div class="event-time">10:00-11:40</div>
+                      <div class="event-title">UI/UX Design</div>
+                      <div class="event-location"><i class="fas fa-video"></i> Kelas Online</div>
+                    </div>
+                  </div>
+                  <div class="time-cell">
+                    <div class="event-card mobile">
+                      <div class="event-time">10:00-11:40</div>
+                      <div class="event-title">Mobile Programming</div>
+                      <div class="event-location"><i class="fas fa-laptop-code"></i> Lab. Komputer 2</div>
+                    </div>
+                  </div>
+                  <div class="time-cell"></div>
+                  <div class="time-cell"></div>
+
+                  <div class="time-slot">13:00</div>
+                  <div class="time-cell">
+                    <div class="event-card jarkom">
+                      <div class="event-time">13:00-14:40</div>
+                      <div class="event-title">Jaringan Komputer</div>
+                      <div class="event-location"><i class="fas fa-map-marker-alt"></i> Ruang 203</div>
+                    </div>
+                  </div>
+                  <div class="time-cell"></div>
+                  <div class="time-cell"></div>
+                  <div class="time-cell">
+                    <div class="event-card jarkom">
+                      <div class="event-time">13:00-14:40</div>
+                      <div class="event-title">Jaringan Komputer</div>
+                      <div class="event-location"><i class="fas fa-map-marker-alt"></i> Ruang 203</div>
+                    </div>
+                  </div>
+                  <div class="time-cell"></div>
+                  <div class="time-cell"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Monthly View -->
+            <div class="view-content" id="month-view">
+              <div class="month-view">
+                <div class="month-header">
+                  <h3>JANUARI 2025</h3>
+                </div>
+                <div class="month-days">
+                  <div class="day-header">M</div>
+                  <div class="day-header">S</div>
+                  <div class="day-header">S</div>
+                  <div class="day-header">R</div>
+                  <div class="day-header">K</div>
+                  <div class="day-header">J</div>
+                  <div class="day-header">S</div>
+
+                  <!-- Days -->
+                  <div class="day empty"></div>
+                  <div class="day empty"></div>
+                  <div class="day empty"></div>
+                  <div class="day">1</div>
+                  <div class="day">2</div>
+                  <div class="day">3</div>
+                  <div class="day">4</div>
+
+                  <div class="day">5</div>
+                  <div class="day">6</div>
+                  <div class="day">7</div>
+                  <div class="day">8</div>
+                  <div class="day">
+                    9
+                    <div class="day-event basis-data">BD</div>
+                  </div>
+                  <div class="day">
+                    10
+                    <div class="day-event web-dev">WD</div>
+                  </div>
+                  <div class="day">11</div>
+
+                  <div class="day current">
+                    12
+                    <div class="day-event basis-data">BD</div>
+                  </div>
+                  <div class="day">
+                    13
+                    <div class="day-event ui-ux">UX</div>
+                  </div>
+                  <div class="day">
+                    14
+                    <div class="day-event mobile">MP</div>
+                  </div>
+                  <div class="day">
+                    15
+                    <div class="day-event jarkom">JK</div>
+                  </div>
+                  <div class="day">16</div>
+                  <div class="day">17</div>
+                  <div class="day">18</div>
+
+                  <div class="day">
+                    19
+                    <div class="day-event web-dev">WD</div>
+                  </div>
+                  <div class="day">
+                    20
+                    <div class="day-event basis-data">BD</div>
+                  </div>
+                  <div class="day">
+                    21
+                    <div class="day-event ui-ux">UX</div>
+                  </div>
+                  <div class="day">
+                    22
+                    <div class="day-event mobile">MP</div>
+                  </div>
+                  <div class="day">
+                    23
+                    <div class="day-event jarkom">JK</div>
+                  </div>
+                  <div class="day">24</div>
+                  <div class="day">25</div>
+                </div>
+
+                <div class="legend">
+                  <h4>Legenda:</h4>
+                  <div class="legend-items">
+                    <div class="legend-item">
+                      <span class="legend-color basis-data"></span>
+                      <span>Basis Data</span>
+                    </div>
+                    <div class="legend-item">
+                      <span class="legend-color web-dev"></span>
+                      <span>Web Development</span>
+                    </div>
+                    <div class="legend-item">
+                      <span class="legend-color ui-ux"></span>
+                      <span>UI/UX Design</span>
+                    </div>
+                    <div class="legend-item">
+                      <span class="legend-color mobile"></span>
+                      <span>Mobile Programming</span>
+                    </div>
+                    <div class="legend-item">
+                      <span class="legend-color jarkom"></span>
+                      <span>Jaringan Komputer</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- List View -->
+            <div class="view-content" id="list-view">
+              <div class="list-view">
+                <table class="schedule-table">
+                  <thead>
+                    <tr>
+                      <th>Mata Kuliah</th>
+                      <th>Hari</th>
+                      <th>Waktu</th>
+                      <th>Ruang</th>
+                      <th>Dosen</th>
+                      <th>SKS</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="course-cell">
+                          <span class="course-dot basis-data"></span>
+                          <div>
+                            <div class="course-name">Basis Data</div>
+                            <div class="course-code">TI301</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Senin & Rabu</td>
+                      <td>08:00 - 09:40</td>
+                      <td>Ruang 301</td>
+                      <td>Dr. Budi Santoso</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="course-cell">
+                          <span class="course-dot web-dev"></span>
+                          <div>
+                            <div class="course-name">Web Development</div>
+                            <div class="course-code">TI302</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Selasa</td>
+                      <td>10:00 - 11:40</td>
+                      <td>Lab. Komputer 1</td>
+                      <td>Prof. Ani Wijaya</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="course-cell">
+                          <span class="course-dot ui-ux"></span>
+                          <div>
+                            <div class="course-name">UI/UX Design</div>
+                            <div class="course-code">TI303</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Rabu</td>
+                      <td>10:00 - 11:40</td>
+                      <td>Kelas Online</td>
+                      <td>Prof. Sari Dewi</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="course-cell">
+                          <span class="course-dot mobile"></span>
+                          <div>
+                            <div class="course-name">Mobile Programming</div>
+                            <div class="course-code">TI304</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Kamis</td>
+                      <td>10:00 - 11:40</td>
+                      <td>Lab. Komputer 2</td>
+                      <td>Dr. Ahmad Fauzi</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="course-cell">
+                          <span class="course-dot jarkom"></span>
+                          <div>
+                            <div class="course-name">Jaringan Komputer</div>
+                            <div class="course-code">TI305</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Senin & Kamis</td>
+                      <td>13:00 - 14:40</td>
+                      <td>Ruang 203</td>
+                      <td>Dr. Rina Hartati</td>
+                      <td>3</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: Jadwal UTS -->
+          <div class="tab-content" id="uts-content">
+            <div class="exam-header">
+              <div class="exam-title">
+                <h3><i class="fas fa-clipboard-check"></i> Jadwal UTS Semester 6</h3>
+                <div class="exam-period">
+                  Periode: 10 - 20 Maret 2025
+                  <span class="countdown"> <i class="fas fa-clock"></i> Dimulai dalam: <span id="uts-days">24</span> hari </span>
+                </div>
+              </div>
+
+              <div class="exam-stats">
+                <div class="stat-card">
+                  <div class="stat-icon">
+                    <i class="fas fa-file-alt"></i>
+                  </div>
+                  <div class="stat-details">
+                    <div class="stat-value">6</div>
+                    <div class="stat-label">Total Ujian</div>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-icon success">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="stat-details">
+                    <div class="stat-value">4</div>
+                    <div class="stat-label">Siap</div>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-icon warning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                  </div>
+                  <div class="stat-details">
+                    <div class="stat-value">2</div>
+                    <div class="stat-label">Perlu Persiapan</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="exam-schedule">
+              <div class="exam-day">
+                <div class="day-header">
+                  <div class="day-name">SENIN</div>
+                  <div class="day-date">10 Maret 2025</div>
+                </div>
+                <div class="exam-list">
+                  <div class="exam-card uts">
+                    <div class="exam-time"><i class="fas fa-clock"></i> 09:00 - 11:00</div>
+                    <div class="exam-info">
+                      <h4>Basis Data</h4>
+                      <div class="exam-details">
+                        <span><i class="fas fa-map-marker-alt"></i> Ruang 301-A</span>
+                        <span><i class="fas fa-book"></i> Tutup Buku</span>
+                        <span><i class="fas fa-hourglass-half"></i> 120 menit</span>
+                      </div>
+                    </div>
+                    <div class="exam-status ready"><i class="fas fa-check"></i> Siap</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="exam-day">
+                <div class="day-header">
+                  <div class="day-name">RABU</div>
+                  <div class="day-date">12 Maret 2025</div>
+                </div>
+                <div class="exam-list">
+                  <div class="exam-card uts">
+                    <div class="exam-time"><i class="fas fa-clock"></i> 09:00 - 11:00</div>
+                    <div class="exam-info">
+                      <h4>UI/UX Design</h4>
+                      <div class="exam-details">
+                        <span><i class="fas fa-map-marker-alt"></i> Ruang 203-B</span>
+                        <span><i class="fas fa-book"></i> Buka Buku</span>
+                        <span><i class="fas fa-hourglass-half"></i> 120 menit</span>
+                      </div>
+                    </div>
+                    <div class="exam-status ready"><i class="fas fa-check"></i> Siap</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="exam-day">
+                <div class="day-header">
+                  <div class="day-name">JUMAT</div>
+                  <div class="day-date">14 Maret 2025</div>
+                </div>
+                <div class="exam-list">
+                  <div class="exam-card uts">
+                    <div class="exam-time"><i class="fas fa-clock"></i> 09:00 - 11:30</div>
+                    <div class="exam-info">
+                      <h4>Web Development</h4>
+                      <div class="exam-details">
+                        <span><i class="fas fa-laptop-code"></i> Lab. Komputer 1</span>
+                        <span><i class="fas fa-flask"></i> Praktikum</span>
+                        <span><i class="fas fa-hourglass-half"></i> 150 menit</span>
+                      </div>
+                    </div>
+                    <div class="exam-status warning"><i class="fas fa-exclamation-triangle"></i> Perlu Latihan</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 3: Jadwal UAS -->
+          <div class="tab-content" id="uas-content">
+            <div class="exam-header">
+              <div class="exam-title">
+                <h3><i class="fas fa-graduation-cap"></i> Jadwal UAS Semester 6</h3>
+                <div class="exam-period">
+                  Periode: 2 - 12 Juni 2025
+                  <span class="countdown"> <i class="fas fa-clock"></i> Dimulai dalam: <span id="uas-days">138</span> hari </span>
+                </div>
+              </div>
+
+              <div class="target-card">
+                <div class="target-item">
+                  <span class="target-label">Target IPK:</span>
+                  <span class="target-value success">3.80</span>
+                </div>
+                <div class="target-item">
+                  <span class="target-label">IPK Saat Ini:</span>
+                  <span class="target-value">3.68</span>
+                </div>
+                <div class="target-item">
+                  <span class="target-label">Dibutuhkan:</span>
+                  <span class="target-value warning">3.85+</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="uas-grid">
+              <div class="uas-schedule">
+                <div class="exam-day">
+                  <div class="day-header">
+                    <div class="day-name">SENIN</div>
+                    <div class="day-date">2 Juni 2025</div>
+                  </div>
+                  <div class="exam-list">
+                    <div class="exam-card uas">
+                      <div class="exam-time"><i class="fas fa-clock"></i> 08:00 - 10:00</div>
+                      <div class="exam-info">
+                        <h4>Basis Data</h4>
+                        <div class="exam-details">
+                          <span><i class="fas fa-map-marker-alt"></i> Ruang 301-A</span>
+                          <span><i class="fas fa-percentage"></i> Bobot: 40%</span>
+                          <span><i class="fas fa-user-tie"></i> Dr. Budi Santoso</span>
+                        </div>
+                      </div>
+                      <div class="exam-grade">Target: <span class="grade-target">A</span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="exam-day">
+                  <div class="day-header">
+                    <div class="day-name">RABU</div>
+                    <div class="day-date">4 Juni 2025</div>
+                  </div>
+                  <div class="exam-list">
+                    <div class="exam-card uas">
+                      <div class="exam-time"><i class="fas fa-clock"></i> 08:00 - 10:00</div>
+                      <div class="exam-info">
+                        <h4>UI/UX Design</h4>
+                        <div class="exam-details">
+                          <span><i class="fas fa-map-marker-alt"></i> Ruang 203-B</span>
+                          <span><i class="fas fa-percentage"></i> Bobot: 35%</span>
+                          <span><i class="fas fa-user-tie"></i> Prof. Sari Dewi</span>
+                        </div>
+                      </div>
+                      <div class="exam-grade">Target: <span class="grade-target">A</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="uas-sidebar">
+                <div class="recommendation-card">
+                  <h4><i class="fas fa-lightbulb"></i> Rekomendasi Persiapan</h4>
+                  <ul class="recommendation-list">
+                    <li class="focus">
+                      <i class="fas fa-crosshairs"></i>
+                      <span><strong>Fokus</strong> pada Mobile Programming (Nilai saat ini: B)</span>
+                    </li>
+                    <li class="maintain">
+                      <i class="fas fa-chart-line"></i>
+                      <span><strong>Maintain</strong> Web Development (Nilai saat ini: A)</span>
+                    </li>
+                    <li class="review">
+                      <i class="fas fa-redo"></i>
+                      <span><strong>Review</strong> UI/UX Design (Nilai saat ini: A)</span>
+                    </li>
+                  </ul>
+
+                  <div class="time-remaining">
+                    <i class="fas fa-hourglass-half"></i>
+                    <span>Sisa waktu persiapan: <strong>138 hari</strong></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Universitas Contoh - Sistem Informasi Akademik. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#"><i class="fas fa-question-circle"></i> Bantuan</a>
+          <a href="#"><i class="fas fa-shield-alt"></i> Privasi</a>
+          <a href="#"><i class="fas fa-file-alt"></i> Syarat & Ketentuan</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

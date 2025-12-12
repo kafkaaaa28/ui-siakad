@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Siakad - Dashboard</title>
+    <link rel="stylesheet" href="./dashboard/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="header-left">
+          <div class="logo">
+            <div class="logo-icon">🎓</div>
+            <div class="logo-text">
+              <h1>UNIVERSITAS CONTOH</h1>
+              <p>Sistem Informasi Akademik</p>
+            </div>
+          </div>
+        </div>
+        <div class="header-right">
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Cari mata kuliah, dosen..." />
+          </div>
+          <div class="header-actions">
+            <button class="icon-btn notification">
+              <i class="fas fa-bell"></i>
+              <span class="badge">3</span>
+            </button>
+            <div class="user-profile">
+              <img src="https://ui-avatars.com/api/?name=Andi+Suryanto&background=E87918&color=fff" alt="Avatar" />
+              <div class="user-info">
+                <span class="user-name">Andi Suryanto</span>
+                <span class="user-role">Mahasiswa</span>
+              </div>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="main-content">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+          <nav class="nav-main">
+            <div class="nav-section">
+              <h3 class="nav-title">NAVIGASI UTAMA</h3>
+              <ul class="nav-menu">
+                <li class="nav-item active">
+                  <a href="#">
+                    <i class="fas fa-home"></i>
+                    <span>Beranda</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="../jadwal/index.html">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Jadwal</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="../hasilStudi/index.html">
+                    <i class="fas fa-book"></i>
+                    <span>Hasil Studi</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="">
+                    <i class="fas fa-book"></i>
+                    <span>Akademik</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="../administrasi/index.html">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span>Keuangan</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#">
+                    <i class="fas fa-laptop"></i>
+                    <span>Kelas Online</span>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="#">
+                    <i class="fas fa-cog"></i>
+                    <span>Pengaturan</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="nav-section">
+              <h3 class="nav-title">AKSI CEPAT</h3>
+              <div class="quick-actions">
+                <button class="action-btn primary">
+                  <i class="fas fa-plus"></i>
+                  <span>Ambil KRS</span>
+                </button>
+                <button class="action-btn secondary">
+                  <i class="fas fa-download"></i>
+                  <span>Unduh Transkrip</span>
+                </button>
+                <button class="action-btn secondary">
+                  <i class="fas fa-credit-card"></i>
+                  <span>Cek Pembayaran</span>
+                </button>
+              </div>
+            </div>
+          </nav>
+        </aside>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="dashboard">
+          <!-- Welcome Section -->
+          <section class="welcome-section card">
+            <div class="welcome-header">
+              <div class="greeting">
+                <h2><i class="fas fa-sun"></i> Selamat Pagi, Andi Suryanto!</h2>
+                <div class="user-details">
+                  <span class="detail-item"> <i class="fas fa-id-card"></i> 23012345 - Teknik Informatika (S1) </span>
+                  <span class="detail-item"> <i class="fas fa-calendar"></i> Semester 6 - TA 2024/2025 </span>
+                  <span class="detail-item status active"> <i class="fas fa-circle"></i> Status: AKTIF </span>
+                </div>
+              </div>
+              <div class="quick-stats">
+                <div class="stat">
+                  <div class="stat-label">IPK Kumulatif</div>
+                  <div class="stat-value">3.68</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Stats Cards -->
+          <div class="stats-grid">
+            <div class="stat-card card">
+              <div class="stat-header">
+                <h3><i class="fas fa-chart-line"></i> IPK Semester</h3>
+                <span class="trend up"><i class="fas fa-arrow-up"></i> 0.15</span>
+              </div>
+              <div class="stat-body">
+                <div class="stat-main-value">3.75</div>
+                <div class="stat-subtext">Semester lalu: 3.60</div>
+              </div>
+            </div>
+
+            <div class="stat-card card">
+              <div class="stat-header">
+                <h3><i class="fas fa-check-circle"></i> SKS</h3>
+                <span class="status-badge completed">Selesai</span>
+              </div>
+              <div class="stat-body">
+                <div class="stat-main-value">144<span class="stat-unit">/144</span></div>
+                <div class="progress-circle">
+                  <div class="circle" data-percent="100"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="stat-card card">
+              <div class="stat-header">
+                <h3><i class="fas fa-wallet"></i> Keuangan</h3>
+                <span class="status-badge success">LUNAS</span>
+              </div>
+              <div class="stat-body">
+                <div class="stat-main-value">Rp 0</div>
+                <div class="stat-subtext">Tagihan semester ini</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Schedule & Progress -->
+          <div class="content-grid">
+            <!-- Today's Schedule -->
+            <section class="schedule-card card">
+              <div class="card-header">
+                <h3><i class="fas fa-calendar-day"></i> Jadwal Hari Ini - Rabu, 15 Jan 2025</h3>
+                <a href="#" class="view-all">Lihat Semua <i class="fas fa-chevron-right"></i></a>
+              </div>
+              <div class="schedule-list">
+                <div class="schedule-item">
+                  <div class="schedule-time">08:00 - 09:40</div>
+                  <div class="schedule-details">
+                    <h4>Basis Data</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Ruang 301 - Dr. Budi Santoso</p>
+                  </div>
+                  <span class="schedule-status ongoing">Berlangsung</span>
+                </div>
+                <div class="schedule-item">
+                  <div class="schedule-time">10:00 - 11:40</div>
+                  <div class="schedule-details">
+                    <h4>UI/UX Design</h4>
+                    <p><i class="fas fa-laptop"></i> Kelas Online - Prof. Sari Dewi</p>
+                  </div>
+                  <span class="schedule-status upcoming">Selanjutnya</span>
+                </div>
+                <div class="schedule-item">
+                  <div class="schedule-time">13:00 - 14:40</div>
+                  <div class="schedule-details">
+                    <h4>Pemrograman Mobile</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Lab. Komputer 2 - Dr. Ahmad Fauzi</p>
+                  </div>
+                  <span class="schedule-status upcoming">Akan Datang</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- Progress & Announcements -->
+            <div class="right-column">
+              <!-- TA Progress -->
+              <section class="progress-card card">
+                <div class="card-header">
+                  <h3><i class="fas fa-tasks"></i> Progress Tugas Akhir</h3>
+                </div>
+                <div class="progress-info">
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 70%"></div>
+                  </div>
+                  <div class="progress-value">70%</div>
+                </div>
+                <div class="progress-details">
+                  <div class="detail">
+                    <span class="label">Bimbingan:</span>
+                    <span class="value">5/8 pertemuan</span>
+                  </div>
+                  <div class="detail">
+                    <span class="label">Dosen Pembimbing:</span>
+                    <span class="value">Prof. Dr. Sari Dewi, M.Kom.</span>
+                  </div>
+                  <div class="detail">
+                    <span class="label">Deadline:</span>
+                    <span class="value deadline">30 Maret 2025</span>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Announcements -->
+              <section class="announcement-card card">
+                <div class="card-header">
+                  <h3><i class="fas fa-bullhorn"></i> Pengumuman Penting</h3>
+                </div>
+                <div class="announcement-list">
+                  <div class="announcement-item important">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <div class="announcement-content">
+                      <h4>Pembukaan KRS Semester 7</h4>
+                      <p>20 - 25 Januari 2025</p>
+                    </div>
+                  </div>
+                  <div class="announcement-item">
+                    <i class="fas fa-clipboard-check"></i>
+                    <div class="announcement-content">
+                      <h4>Jadwal UTS Genap 2024/2025</h4>
+                      <p>10 - 20 Maret 2025</p>
+                    </div>
+                  </div>
+                  <div class="announcement-item warning">
+                    <i class="fas fa-clock"></i>
+                    <div class="announcement-content">
+                      <h4>Batas Pembayaran UKT</h4>
+                      <p>Jatuh tempo: 5 hari lagi</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <!-- Course Status Table -->
+          <section class="course-card card">
+            <div class="card-header">
+              <h3><i class="fas fa-book-open"></i> Status Mata Kuliah Semester Ini</h3>
+              <div class="filter-options">
+                <button class="filter-btn active">Semua (6)</button>
+                <button class="filter-btn">On Track</button>
+                <button class="filter-btn">Perhatian</button>
+              </div>
+            </div>
+            <div class="table-container">
+              <table class="course-table">
+                <thead>
+                  <tr>
+                    <th>Kode</th>
+                    <th>Mata Kuliah</th>
+                    <th>SKS</th>
+                    <th>Status</th>
+                    <th>Nilai</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>TI301</td>
+                    <td>UI/UX Design</td>
+                    <td>3</td>
+                    <td><span class="status-badge on-track">On Track</span></td>
+                    <td><span class="grade A">A</span></td>
+                    <td>
+                      <button class="table-btn"><i class="fas fa-eye"></i> Detail</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>TI302</td>
+                    <td>Web Development</td>
+                    <td>3</td>
+                    <td><span class="status-badge on-track">On Track</span></td>
+                    <td><span class="grade A">A</span></td>
+                    <td>
+                      <button class="table-btn"><i class="fas fa-eye"></i> Detail</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>TI303</td>
+                    <td>Mobile Programming</td>
+                    <td>3</td>
+                    <td><span class="status-badge warning">Warning</span></td>
+                    <td><span class="grade B">B</span></td>
+                    <td>
+                      <button class="table-btn warning"><i class="fas fa-exclamation-triangle"></i> Periksa</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>TI304</td>
+                    <td>Basis Data Lanjut</td>
+                    <td>3</td>
+                    <td><span class="status-badge on-track">On Track</span></td>
+                    <td><span class="grade A">A</span></td>
+                    <td>
+                      <button class="table-btn"><i class="fas fa-eye"></i> Detail</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>TI305</td>
+                    <td>Jaringan Komputer</td>
+                    <td>3</td>
+                    <td><span class="status-badge at-risk">At Risk</span></td>
+                    <td><span class="grade C">C</span></td>
+                    <td>
+                      <button class="table-btn danger"><i class="fas fa-exclamation-circle"></i> Butuh Bantuan</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="./dashboard/script.js"></script>
+  </body>
+</html>
